@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FAF5EE; font-family: "Rubik", system-ui, "Segoe UI", sans-serif; color: #2A221D; }
+    * { box-sizing: border-box; }
+    a { color: #B85C38; } a:hover { color: #8E3F22; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #FAF5EE; display: flex; flex-direction: column; overflow: hidden;">
+
+  <div style="height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 12px 0 8px;">
+    <div style="display: flex; align-items: center; gap: 4px;">
+      <div style="width: 48px; height: 48px; border-radius: 24px; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+      <span style="font-size: 20px; font-weight: 600;">Stock count</span>
+    </div>
+    <div style="height: 36px; padding: 0 12px; border-radius: 18px; background: #F3EBE1; display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 500; font-variant-numeric: tabular-nums; color: #5C4F45;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>12:48
+    </div>
+  </div>
+
+  <div style="margin: 4px 16px 0; background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 22px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px;">
+    <div style="display: flex; align-items: baseline; justify-content: space-between;">
+      <div style="display: flex; align-items: baseline; gap: 6px;"><span style="font-size: 30px; font-weight: 600; font-variant-numeric: tabular-nums;">18</span><span style="font-size: 16px; color: #7B6D62;">of 42 counted</span></div>
+      <span style="font-size: 14px; color: #7B6D62;">43%</span>
+    </div>
+    <div style="height: 8px; border-radius: 4px; background: #F3EBE1; overflow: hidden;"><div style="width: 43%; height: 100%; background: #B85C38; border-radius: 4px;"></div></div>
+  </div>
+
+  <div style="margin: 12px 16px 0; background: #F6E3D8; border-radius: 22px; padding: 14px 14px 14px 18px; display: flex; align-items: center; gap: 12px;">
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;">
+      <span style="font-size: 12px; color: #8E3F22; font-weight: 500;">Just scanned</span>
+      <span style="font-size: 17px; font-weight: 600;">Pasta 500g</span>
+      <span style="font-size: 13px; color: #5C4F45;">Expected 36</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <div style="width: 44px; height: 44px; border-radius: 22px; background: #FFFCF8; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path></svg></div>
+      <span style="width: 44px; text-align: center; font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums;">36</span>
+      <div style="width: 44px; height: 44px; border-radius: 22px; background: #FFFCF8; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg></div>
+    </div>
+  </div>
+
+  <div style="margin: 16px 16px 0; display: flex; background: #F3EBE1; border-radius: 16px; padding: 4px; gap: 4px; height: 50px;">
+    <div style="flex: 1; border-radius: 12px; background: #FFFCF8; box-shadow: 0 1px 3px rgba(80, 45, 20, 0.12); display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 15px; font-weight: 600;">Differences <span style="min-width: 22px; height: 22px; border-radius: 11px; background: #C0453A; color: #FFF8F2; font-size: 12px; display: flex; align-items: center; justify-content: center;">3</span></div>
+    <div style="flex: 1; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 500; color: #7B6D62;">All counted</div>
+  </div>
+
+  <div style="flex: 1; overflow: hidden; display: flex; flex-direction: column; gap: 10px; padding: 12px 16px;">
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 20px; padding: 12px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 3px;"><span style="font-size: 16px; font-weight: 500;">Sugar 1kg</span><span style="font-size: 13px; color: #7B6D62;">Expected 21 · Counted 18</span></div>
+      <span style="min-width: 56px; height: 36px; border-radius: 12px; background: #F8E1DD; color: #9E3328; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums;">−3</span>
+    </div>
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 20px; padding: 12px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 3px;"><span style="font-size: 16px; font-weight: 500;">Mineral water 1.5L</span><span style="font-size: 13px; color: #7B6D62;">Expected 48 · Counted 50</span></div>
+      <span style="min-width: 56px; height: 36px; border-radius: 12px; background: #E2F0E4; color: #2F6E44; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums;">+2</span>
+    </div>
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 20px; padding: 12px 16px; display: flex; align-items: center; gap: 12px;">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 3px;"><span style="font-size: 16px; font-weight: 500;">Green tea 250g</span><span style="font-size: 13px; color: #7B6D62;">Expected 5 · Counted 4</span></div>
+      <span style="min-width: 56px; height: 36px; border-radius: 12px; background: #F8E1DD; color: #9E3328; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: center; font-variant-numeric: tabular-nums;">−1</span>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0 16px 24px;">
+    <div style="height: 62px; border-radius: 20px; border: 1.5px solid #D9CBBB; background: #FFFCF8; color: #2A221D; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 600;">Finish count</div>
+    <div style="height: 62px; border-radius: 20px; background: #B85C38; color: #FFF8F2; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 17px; font-weight: 600;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2M8 8v8M10.5 8v8M13.5 8v8M16 8v8"></path></svg>Scan next
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FAF5EE; font-family: "Rubik", system-ui, "Segoe UI", sans-serif; color: #2A221D; }
+    * { box-sizing: border-box; }
+    a { color: #B85C38; } a:hover { color: #8E3F22; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #FAF5EE; display: flex; flex-direction: column; overflow: hidden; position: relative;">
+
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 20px 8px;">
+    <div style="display: flex; flex-direction: column; gap: 2px;">
+      <div style="font-size: 14px; color: #7B6D62;">My shop · 42 items</div>
+      <div style="font-size: 28px; font-weight: 600; letter-spacing: -0.3px;">Products</div>
+    </div>
+    <div style="width: 44px; height: 44px; border-radius: 22px; background: #F2D6C6; color: #8E3F22; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 17px;">K</div>
+  </div>
+
+  <div style="margin: 8px 16px 0; background: #F9EDD2; color: #6E4B0E; border-radius: 16px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; font-size: 13px; line-height: 1.35;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M3 3l18 18"></path><path d="M8 7.5A5.5 5.5 0 0 1 17.5 10H18a3.5 3.5 0 0 1 2.2 6.2M17 18H7a4 4 0 0 1-1.6-7.7"></path></svg>
+    <span>You're offline. Changes are saved on this phone and will sync later.</span>
+  </div>
+
+  <div style="margin: 12px 16px 0; height: 52px; border-radius: 26px; background: #FFFCF8; border: 1px solid #E8DCCD; display: flex; align-items: center; gap: 10px; padding: 0 18px; color: #9A8B7F;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+    <span style="font-size: 16px;">Search name or barcode</span>
+  </div>
+
+  <div style="display: flex; gap: 8px; padding: 12px 16px 4px;">
+    <div style="height: 38px; padding: 0 16px; border-radius: 19px; background: #2A221D; color: #FFF8F2; display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500;">All <span style="opacity: 0.7;">42</span></div>
+    <div style="height: 38px; padding: 0 14px; border-radius: 19px; background: #FFFCF8; border: 1px solid #E8DCCD; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500;"><span style="width: 8px; height: 8px; border-radius: 4px; background: #C98A1E;"></span>Low stock <span style="color: #7B6D62;">2</span></div>
+    <div style="height: 38px; padding: 0 14px; border-radius: 19px; background: #FFFCF8; border: 1px solid #E8DCCD; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500;"><span style="width: 8px; height: 8px; border-radius: 4px; background: #C0453A;"></span>Out <span style="color: #7B6D62;">1</span></div>
+  </div>
+
+  <div style="flex: 1; overflow: hidden; display: flex; flex-direction: column; gap: 10px; padding: 10px 16px;">
+
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 20px; padding: 12px 14px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 52px; height: 52px; border-radius: 16px; background: #EFE3C8; color: #7A5A16; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 20px;">O</div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+        <div style="font-size: 16px; font-weight: 500;">Olive oil 1L</div>
+        <div style="display: flex; align-items: center; gap: 6px;"><span style="font-size: 12px; font-weight: 500; color: #7A5410; background: #F9EDD2; padding: 2px 8px; border-radius: 8px;">Low · reorder at 6</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end;"><span style="font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; color: #A8700F;">3</span><span style="font-size: 12px; color: #7B6D62;">bottles</span></div>
+    </div>
+
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 20px; padding: 12px 14px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 52px; height: 52px; border-radius: 16px; background: #F1E4D3; color: #8A6A45; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 20px;">S</div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+        <div style="font-size: 16px; font-weight: 500;">Semolina 1kg</div>
+        <div style="display: flex; align-items: center; gap: 6px;"><span style="font-size: 12px; font-weight: 500; color: #9E3328; background: #F8E1DD; padding: 2px 8px; border-radius: 8px;">Out of stock</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end;"><span style="font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; color: #C0453A;">0</span><span style="font-size: 12px; color: #7B6D62;">bags</span></div>
+    </div>
+
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 20px; padding: 12px 14px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 52px; height: 52px; border-radius: 16px; background: #DCEBEA; color: #2F6966; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 20px;">M</div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+        <div style="font-size: 16px; font-weight: 500;">Mineral water 1.5L</div>
+        <div style="font-size: 13px; color: #7B6D62;">6130000100027</div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end;"><span style="font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums;">48</span><span style="font-size: 12px; color: #7B6D62;">bottles</span></div>
+    </div>
+
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 20px; padding: 12px 14px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 52px; height: 52px; border-radius: 16px; background: #EDE3EE; color: #6D4F72; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 20px;">S</div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+        <div style="font-size: 16px; font-weight: 500;">Sugar 1kg</div>
+        <div style="font-size: 13px; color: #7B6D62;">6130000100034</div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end;"><span style="font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums;">21</span><span style="font-size: 12px; color: #7B6D62;">pcs</span></div>
+    </div>
+
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 20px; padding: 12px 14px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 52px; height: 52px; border-radius: 16px; background: #E1EDDC; color: #43683A; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 20px;">G</div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+        <div style="font-size: 16px; font-weight: 500;">Green tea 250g</div>
+        <div style="display: flex; align-items: center; gap: 6px;"><span style="font-size: 12px; font-weight: 500; color: #7A5410; background: #F9EDD2; padding: 2px 8px; border-radius: 8px;">Low · reorder at 8</span></div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end;"><span style="font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; color: #A8700F;">5</span><span style="font-size: 12px; color: #7B6D62;">boxes</span></div>
+    </div>
+
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 20px; padding: 12px 14px; display: flex; align-items: center; gap: 12px;">
+      <div style="width: 52px; height: 52px; border-radius: 16px; background: #F4E0D5; color: #8E3F22; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 20px;">P</div>
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+        <div style="font-size: 16px; font-weight: 500;">Pasta 500g</div>
+        <div style="font-size: 13px; color: #7B6D62;">6130000100058</div>
+      </div>
+      <div style="display: flex; flex-direction: column; align-items: flex-end;"><span style="font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums;">36</span><span style="font-size: 12px; color: #7B6D62;">pcs</span></div>
+    </div>
+
+  </div>
+
+  <div style="position: absolute; right: 16px; bottom: 100px; display: flex; flex-direction: column; align-items: flex-end; gap: 12px;">
+    <div style="width: 52px; height: 52px; border-radius: 18px; background: #F2D6C6; color: #8E3F22; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 6px rgba(80, 45, 20, 0.15);">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+    </div>
+    <div style="height: 64px; padding: 0 26px 0 22px; border-radius: 22px; background: #B85C38; color: #FFF8F2; display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 600; box-shadow: 0 6px 16px rgba(140, 60, 25, 0.3);">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2M8 8v8M10.5 8v8M13.5 8v8M16 8v8"></path></svg>
+      Scan
+    </div>
+  </div>
+
+  <div style="height: 80px; flex-shrink: 0; display: flex; background: #F3EBE1; border-top: 1px solid #E8DCCD; padding: 0 6px;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 600; color: #2A221D;">
+      <div style="width: 60px; height: 32px; border-radius: 16px; background: #F2D6C6; color: #8E3F22; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z"></path><path d="M3.5 7.5L12 12l8.5-4.5M12 12v9"></path></svg></div>
+      <span>Products</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 500; color: #7B6D62;">
+      <div style="width: 60px; height: 32px; border-radius: 16px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="16.5" rx="2"></rect><path d="M9 3h6v3H9z"></path><path d="M9 13.5l2 2 4-4"></path></svg></div>
+      <span>Count</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 500; color: #7B6D62;">
+      <div style="width: 60px; height: 32px; border-radius: 16px; display: flex; align-items: center; justify-content: center; position: relative;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20a2 2 0 0 0 4 0"></path></svg><span style="position: absolute; top: 0; right: 12px; min-width: 18px; height: 18px; border-radius: 9px; background: #C0453A; color: #FFF8F2; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; padding: 0 5px;">3</span></div>
+      <span>Alerts</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 500; color: #7B6D62;">
+      <div style="width: 60px; height: 32px; border-radius: 16px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.5-4.5L4 8"></path><path d="M4 3v5h5"></path><path d="M4 13a8 8 0 0 0 14.5 4.5L20 16"></path><path d="M20 21v-5h-5"></path></svg></div>
+      <span>Sync</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 500; color: #7B6D62;">
+      <div style="width: 60px; height: 32px; border-radius: 16px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg></div>
+      <span>Settings</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

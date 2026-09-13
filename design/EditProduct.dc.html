@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FAF5EE; font-family: "Rubik", system-ui, "Segoe UI", sans-serif; color: #2A221D; }
+    * { box-sizing: border-box; }
+    a { color: #B85C38; } a:hover { color: #8E3F22; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #FAF5EE; display: flex; flex-direction: column; overflow: hidden;">
+
+  <div style="height: 64px; flex-shrink: 0; display: flex; align-items: center; gap: 4px; padding: 0 8px;">
+    <div style="width: 48px; height: 48px; border-radius: 24px; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></div>
+    <span style="font-size: 20px; font-weight: 600;">Edit product</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 26px; padding: 8px 16px 0;">
+
+    <div style="height: 128px; border-radius: 24px; border: 2px dashed #D9CBBB; background: #F7F0E7; display: flex; align-items: center; justify-content: center; gap: 16px;">
+      <div style="width: 64px; height: 64px; border-radius: 20px; background: #F2D6C6; color: #8E3F22; display: flex; align-items: center; justify-content: center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg></div>
+      <div style="display: flex; flex-direction: column; gap: 3px;"><span style="font-size: 16px; font-weight: 600;">Add a photo</span><span style="font-size: 14px; color: #7B6D62;">Camera or gallery</span></div>
+    </div>
+
+    <div style="position: relative; height: 58px; border: 1.5px solid #D9CBBB; border-radius: 16px; display: flex; align-items: center; padding: 0 16px; background: #FFFCF8;">
+      <span style="position: absolute; top: -10px; left: 12px; background: #FAF5EE; padding: 0 5px; font-size: 13px; color: #7B6D62;">Name</span>
+      <span style="font-size: 16px;">Olive oil 1L</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 6px;">
+      <div style="position: relative; height: 58px; border: 2px solid #C0453A; border-radius: 16px; display: flex; align-items: center; gap: 10px; padding: 0 8px 0 16px; background: #FFFCF8;">
+        <span style="position: absolute; top: -10px; left: 12px; background: #FAF5EE; padding: 0 5px; font-size: 13px; color: #C0453A; font-weight: 500;">Barcode</span>
+        <span style="flex: 1; font-size: 16px; font-variant-numeric: tabular-nums;">6130000100034</span>
+        <div style="width: 44px; height: 44px; border-radius: 14px; background: #F2D6C6; color: #8E3F22; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a1 1 0 0 1 1-1h2M17 4h2a1 1 0 0 1 1 1v2M20 17v2a1 1 0 0 1-1 1h-2M7 20H5a1 1 0 0 1-1-1v-2M8 8v8M10.5 8v8M13.5 8v8M16 8v8"></path></svg></div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 6px; padding: 0 14px; font-size: 13px; color: #C0453A;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2.5 20h19z"></path><path d="M12 10v4M12 17.5v.5"></path></svg>This barcode already belongs to Sugar 1kg
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+      <div style="position: relative; height: 58px; border: 1.5px solid #D9CBBB; border-radius: 16px; display: flex; align-items: center; justify-content: space-between; padding: 0 12px 0 16px; background: #FFFCF8;">
+        <span style="position: absolute; top: -10px; left: 12px; background: #FAF5EE; padding: 0 5px; font-size: 13px; color: #7B6D62;">Unit</span>
+        <span style="font-size: 16px;">bottles</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7B6D62" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+      </div>
+      <div style="position: relative; height: 58px; border: 1.5px solid #D9CBBB; border-radius: 16px; display: flex; align-items: center; padding: 0 16px; background: #FFFCF8;">
+        <span style="position: absolute; top: -10px; left: 12px; background: #FAF5EE; padding: 0 5px; font-size: 13px; color: #7B6D62;">Reorder at</span>
+        <span style="font-size: 16px; font-variant-numeric: tabular-nums;">6</span>
+      </div>
+    </div>
+    <span style="font-size: 13px; color: #7B6D62; padding: 0 14px; margin-top: -18px; line-height: 1.4;">You'll get an alert when stock drops to this number.</span>
+
+  </div>
+
+  <div style="flex: 1;"></div>
+
+  <div style="display: flex; flex-direction: column; gap: 6px; padding: 0 16px 24px;">
+    <div style="height: 62px; border-radius: 20px; background: #B85C38; color: #FFF8F2; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600;">Save changes</div>
+    <div style="height: 52px; border-radius: 20px; color: #C0453A; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 16px; font-weight: 500;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4.5h6V7M6.5 7l1 13h9l1-13"></path></svg>Delete product
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

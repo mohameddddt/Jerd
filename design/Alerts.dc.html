@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&amp;display=swap">
+  <style>
+    body { margin: 0; background: #FAF5EE; font-family: "Rubik", system-ui, "Segoe UI", sans-serif; color: #2A221D; }
+    * { box-sizing: border-box; }
+    a { color: #B85C38; } a:hover { color: #8E3F22; }
+  </style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #FAF5EE; display: flex; flex-direction: column; overflow: hidden;">
+
+  <div style="display: flex; flex-direction: column; gap: 2px; padding: 20px 20px 8px;">
+    <div style="font-size: 14px; color: #7B6D62;">Most urgent first</div>
+    <div style="font-size: 28px; font-weight: 600; letter-spacing: -0.3px;">3 items to restock</div>
+  </div>
+
+  <div style="flex: 1; overflow: hidden; display: flex; flex-direction: column; gap: 12px; padding: 12px 16px;">
+
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 48px; height: 48px; border-radius: 16px; background: #F8E1DD; color: #C0453A; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4L2.5 20h19z"></path><path d="M12 10v4M12 17.5v.5"></path></svg></div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 17px; font-weight: 600;">Semolina 1kg</span><span style="font-size: 14px; color: #9E3328; font-weight: 500;">Out of stock</span></div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end;"><span style="font-size: 24px; font-weight: 600; color: #C0453A; font-variant-numeric: tabular-nums;">0</span><span style="font-size: 12px; color: #7B6D62;">of 10</span></div>
+      </div>
+      <div style="height: 6px; border-radius: 3px; background: #F3EBE1;"></div>
+      <div style="height: 48px; border-radius: 16px; background: #E2F0E4; color: #2F6E44; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 600;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>Record received
+      </div>
+    </div>
+
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 48px; height: 48px; border-radius: 16px; background: #F9EDD2; color: #A8700F; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20a2 2 0 0 0 4 0"></path></svg></div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 17px; font-weight: 600;">Olive oil 1L</span><span style="font-size: 14px; color: #7A5410; font-weight: 500;">Below reorder point</span></div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end;"><span style="font-size: 24px; font-weight: 600; color: #A8700F; font-variant-numeric: tabular-nums;">3</span><span style="font-size: 12px; color: #7B6D62;">of 6</span></div>
+      </div>
+      <div style="height: 6px; border-radius: 3px; background: #F3EBE1; overflow: hidden;"><div style="width: 50%; height: 100%; background: #C98A1E; border-radius: 3px;"></div></div>
+      <div style="height: 48px; border-radius: 16px; background: #E2F0E4; color: #2F6E44; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 600;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>Record received
+      </div>
+    </div>
+
+    <div style="background: #FFFCF8; border: 1px solid #EFE5D8; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 48px; height: 48px; border-radius: 16px; background: #F9EDD2; color: #A8700F; display: flex; align-items: center; justify-content: center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20a2 2 0 0 0 4 0"></path></svg></div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 2px;"><span style="font-size: 17px; font-weight: 600;">Green tea 250g</span><span style="font-size: 14px; color: #7A5410; font-weight: 500;">Below reorder point</span></div>
+        <div style="display: flex; flex-direction: column; align-items: flex-end;"><span style="font-size: 24px; font-weight: 600; color: #A8700F; font-variant-numeric: tabular-nums;">5</span><span style="font-size: 12px; color: #7B6D62;">of 8</span></div>
+      </div>
+      <div style="height: 6px; border-radius: 3px; background: #F3EBE1; overflow: hidden;"><div style="width: 62%; height: 100%; background: #C98A1E; border-radius: 3px;"></div></div>
+      <div style="height: 48px; border-radius: 16px; background: #E2F0E4; color: #2F6E44; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; font-weight: 600;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>Record received
+      </div>
+    </div>
+
+  </div>
+
+  <div style="height: 80px; flex-shrink: 0; display: flex; background: #F3EBE1; border-top: 1px solid #E8DCCD; padding: 0 6px;">
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 500; color: #7B6D62;">
+      <div style="width: 60px; height: 32px; border-radius: 16px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z"></path><path d="M3.5 7.5L12 12l8.5-4.5M12 12v9"></path></svg></div>
+      <span>Products</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 500; color: #7B6D62;">
+      <div style="width: 60px; height: 32px; border-radius: 16px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="16.5" rx="2"></rect><path d="M9 3h6v3H9z"></path><path d="M9 13.5l2 2 4-4"></path></svg></div>
+      <span>Count</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 600; color: #2A221D;">
+      <div style="width: 60px; height: 32px; border-radius: 16px; background: #F2D6C6; color: #8E3F22; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z"></path><path d="M10 20a2 2 0 0 0 4 0"></path></svg></div>
+      <span>Alerts</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 500; color: #7B6D62;">
+      <div style="width: 60px; height: 32px; border-radius: 16px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 0 0-14.5-4.5L4 8"></path><path d="M4 3v5h5"></path><path d="M4 13a8 8 0 0 0 14.5 4.5L20 16"></path><path d="M20 21v-5h-5"></path></svg></div>
+      <span>Sync</span>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-size: 12px; font-weight: 500; color: #7B6D62;">
+      <div style="width: 60px; height: 32px; border-radius: 16px; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h10M18 7h2M4 17h4M12 17h8"></path><circle cx="16" cy="7" r="2"></circle><circle cx="10" cy="17" r="2"></circle></svg></div>
+      <span>Settings</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

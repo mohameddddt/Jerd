@@ -1,0 +1,15 @@
+{
+  "artboards": [
+    { "file": "Login.dc.html", "title": "1 · Login", "x": 0, "y": 0, "w": 390, "h": 844 },
+    { "file": "Main.dc.html", "title": "2 · Products (home)", "x": 470, "y": 0, "w": 390, "h": 844 },
+    { "file": "Scan.dc.html", "title": "3 · Scan", "x": 940, "y": 0, "w": 390, "h": 844 },
+    { "file": "ProductDetail.dc.html", "title": "4 · Product detail", "x": 1410, "y": 0, "w": 390, "h": 844 },
+    { "file": "RecordMovement.dc.html", "title": "5 · Record movement", "x": 1880, "y": 0, "w": 390, "h": 844 },
+    { "file": "EditProduct.dc.html", "title": "6 · Add / edit product", "x": 0, "y": 1004, "w": 390, "h": 844 },
+    { "file": "StockCount.dc.html", "title": "7 · Stock count", "x": 470, "y": 1004, "w": 390, "h": 844 },
+    { "file": "Alerts.dc.html", "title": "8 · Alerts", "x": 940, "y": 1004, "w": 390, "h": 844 },
+    { "file": "SyncStatus.dc.html", "title": "9 · Sync status", "x": 1410, "y": 1004, "w": 390, "h": 844 },
+    { "file": "Settings.dc.html", "title": "10 · Settings", "x": 1880, "y": 1004, "w": 390, "h": 844 }
+  ],
+  "launch": { "view": "canvas" }
+}
