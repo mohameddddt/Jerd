@@ -1,3 +1,4 @@
+import hmac
 import uuid
 from datetime import datetime, timedelta, timezone
 
@@ -9,6 +10,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from .auth import error, issue_token, login_required, owner_required, public_user
 from .db import device_tokens, movements, normalize_iso, now_iso, products, shops, users
 from .services import gemini
+from .services.digest import send_digest
 from .services.stock import crossed_reorder_point, low_stock, stock_for
 
 api = Blueprint("api", __name__)
@@ -74,6 +76,16 @@ def app_version():
             "notes": cfg["RELEASE_NOTES"],
         }
     )
+
+
+@api.post("/jobs/nightly-digest")
+def nightly_digest_job():
+    """Called by a scheduler (GitHub Actions) — Render cron jobs are not free."""
+    secret = current_app.config["CRON_SECRET"]
+    given = request.headers.get("X-Cron-Secret", "")
+    if not secret or not hmac.compare_digest(given, secret):
+        return error("Forbidden", 403)
+    return jsonify({"shops_notified": send_digest(current_app.engine, current_app.push)})
 
 
 # ---------------------------------------------------------------- auth

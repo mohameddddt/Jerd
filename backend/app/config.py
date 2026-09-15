@@ -15,6 +15,8 @@ class Config:
     GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
     GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
     SENTRY_DSN = os.environ.get("SENTRY_DSN", "")
+    # Shared secret for scheduler-triggered jobs such as the nightly digest.
+    CRON_SECRET = os.environ.get("CRON_SECRET", "")
 
     # In-app upgrade check for the privately distributed APK.
     LATEST_VERSION = os.environ.get("LATEST_VERSION", "0.1.0")
