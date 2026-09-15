@@ -56,8 +56,12 @@ flutter run --dart-define-from-file=config/dev.json
    `backend/schema.sql`. Copy the connection string (Project settings →
    Database → URI).
 2. **Render**: New → Blueprint → select this repo. `render.yaml` creates the
-   API and the nightly digest cron job. Fill `DATABASE_URL` and the other
-   secret variables. Every push to GitHub redeploys.
+   API on the **free** plan. Fill `DATABASE_URL` and the other secret
+   variables. Every push to GitHub redeploys.
+   Render cron jobs are paid, so the nightly digest runs from GitHub Actions
+   (`.github/workflows/nightly-digest.yml`). In the GitHub repo add two
+   Actions secrets: `API_BASE_URL` (your Render URL) and `CRON_SECRET` (copy
+   the value Render generated under jerd-api → Environment).
 3. Run the seed script once with `DATABASE_URL` pointing at Supabase.
 4. Build the app with `API_BASE_URL=https://<your-service>.onrender.com`.
 
