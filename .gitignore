@@ -43,3 +43,13 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Local build-time config and logs
+/config/*.json
+!/config/*.example.json
+build_apk.log
+
+# Firebase: service-account keys are secrets; app config stays local too
+*firebase-adminsdk*.json
+firebase-service-account*.json
+/android/app/google-services.json
