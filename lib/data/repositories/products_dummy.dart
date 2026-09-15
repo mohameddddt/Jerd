@@ -1,71 +1,34 @@
 import '../models/product.dart';
+import 'demo_data.dart';
 import 'products_repo.dart';
+import 'repo_exceptions.dart';
 
+/// In-memory products for early UI work and widget tests.
 class ProductsDummy implements ProductsRepo {
-  final List<Product> _products = [
-    Product(
-      uuid: 'p-001',
-      barcode: '613043000001',
-      name: 'Milk 1L',
-      unit: 'bottle',
-      reorderPoint: 10,
-      updatedAt: DateTime(2026, 9, 10),
-    ),
-    Product(
-      uuid: 'p-002',
-      barcode: '613043000002',
-      name: 'Basmati Rice 1kg',
-      unit: 'bag',
-      reorderPoint: 8,
-      updatedAt: DateTime(2026, 9, 11),
-    ),
-    Product(
-      uuid: 'p-003',
-      barcode: '613043000003',
-      name: 'Olive Oil 1L',
-      unit: 'bottle',
-      reorderPoint: 5,
-      updatedAt: DateTime(2026, 9, 12),
-    ),
-    Product(
-      uuid: 'p-004',
-      barcode: '613043000004',
-      name: 'Tomato Sauce 500g',
-      unit: 'jar',
-      reorderPoint: 6,
-      updatedAt: DateTime(2026, 9, 12),
-    ),
-    Product(
-      uuid: 'p-005',
-      barcode: '613043000005',
-      name: 'Green Tea 25 bags',
-      unit: 'box',
-      reorderPoint: 4,
-      updatedAt: DateTime(2026, 9, 13),
-    ),
-  ];
+  final List<Product> _products;
+  final Duration latency;
+
+  ProductsDummy({List<Product>? seed, this.latency = const Duration(milliseconds: 150)})
+      : _products = seed ?? DemoData.products();
 
   @override
   Future<List<Product>> getProducts() async {
-    await Future.delayed(const Duration(milliseconds: 150));
-    return List<Product>.from(_products.where((p) => !p.deleted));
+    await Future<void>.delayed(latency);
+    return _products.where((p) => !p.deleted).toList()
+      ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
   }
 
   @override
-  Future<Product?> getById(String uuid) async {
-    return _find(uuid);
-  }
+  Future<Product?> getById(String uuid) async => _find((p) => p.uuid == uuid);
 
   @override
-  Future<Product?> getByBarcode(String barcode) async {
-    for (final product in _products) {
-      if (!product.deleted && product.barcode == barcode) return product;
-    }
-    return null;
-  }
+  Future<Product?> getByBarcode(String barcode) async => _find((p) => p.barcode == barcode);
 
   @override
   Future<Product> save(Product product) async {
+    ensureValidProduct(product);
+    final clash = _find((p) => p.barcode == product.barcode && p.uuid != product.uuid);
+    if (clash != null) throw DuplicateBarcodeException(product.barcode, clash.name);
     final index = _products.indexWhere((p) => p.uuid == product.uuid);
     if (index == -1) {
       _products.add(product);
@@ -76,16 +39,16 @@ class ProductsDummy implements ProductsRepo {
   }
 
   @override
-  Future<void> delete(String uuid) async {
+  Future<void> delete(String uuid, {String by = ''}) async {
     final index = _products.indexWhere((p) => p.uuid == uuid);
-    if (index != -1) {
-      _products[index] = _products[index].copyWith(deleted: true);
-    }
+    if (index == -1) throw NotFoundException('product $uuid');
+    _products[index] =
+        _products[index].copyWith(deleted: true, updatedAt: DateTime.now(), updatedBy: by);
   }
 
-  Product? _find(String uuid) {
+  Product? _find(bool Function(Product) test) {
     for (final product in _products) {
-      if (product.uuid == uuid && !product.deleted) return product;
+      if (!product.deleted && test(product)) return product;
     }
     return null;
   }
