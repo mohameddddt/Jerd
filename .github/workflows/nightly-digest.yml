@@ -1,0 +1,24 @@
+# Free replacement for a Render cron job: every evening, ask the API to send
+# each shop its low-stock digest.
+#
+# Repo → Settings → Secrets and variables → Actions → New repository secret:
+#   API_BASE_URL  e.g. https://jerd-api.onrender.com
+#   CRON_SECRET   the value Render generated for the jerd-api service
+name: Nightly digest
+
+on:
+  schedule:
+    - cron: "0 19 * * *" # 20:00 in Algeria (UTC+1)
+  workflow_dispatch: {}
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake the API (free instances sleep)
+        run: curl -fsS --retry 5 --retry-delay 15 --max-time 90 "${{ secrets.API_BASE_URL }}/health"
+      - name: Send digest
+        run: |
+          curl -fsS --retry 3 --retry-delay 10 --max-time 90 -X POST \
+            -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}" \
+            "${{ secrets.API_BASE_URL }}/jobs/nightly-digest"
