@@ -346,6 +346,18 @@ real — choose it only if you want the harder conflict story in the demo.
 Blocking is simpler to reason about. Allowing both means reconciling against a moving target. Either
 is defensible, but decide before building `StockCountCubit`, because it shapes that cubit.
 
+> **Decided.** (1) **Multi-user with roles**: an owner and staff per shop. Staff record movements,
+> edit products and count; only the owner deletes products and manages accounts. (2) **A running
+> count blocks movements**: `ProductsCubit.recordMovement` refuses with `CountInProgressException`
+> and the home screen shows a "count in progress" banner until it is committed or discarded.
+
+---
+
+## Running the project
+
+See [docs/SETUP.md](docs/SETUP.md) for the offline demo, the backend, and wiring each cloud service,
+and [docs/RELEASE.md](docs/RELEASE.md) for signing, the obfuscated build and private upgrades.
+
 ---
 
 ## Deliverables checklist
