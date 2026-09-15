@@ -48,6 +48,21 @@ class StatusColors extends ThemeExtension<StatusColors> {
     onLowStockContainer: AppColors.onLowStockContainer,
   );
 
+  static const dark = StatusColors(
+    received: Color(0xFF5DB079),
+    receivedText: Color(0xFF7FCB98),
+    receivedContainer: Color(0xFF1F3A28),
+    onReceivedContainer: Color(0xFF9EDBB2),
+    soldOut: Color(0xFFE77B6F),
+    soldOutText: Color(0xFFF0907F),
+    soldOutContainer: Color(0xFF45231F),
+    onSoldOutContainer: Color(0xFFF5B2A8),
+    lowStock: Color(0xFFE0A23A),
+    lowStockText: Color(0xFFE9B45A),
+    lowStockContainer: Color(0xFF3E3018),
+    onLowStockContainer: Color(0xFFF0CD8A),
+  );
+
   static StatusColors of(BuildContext context) =>
       Theme.of(context).extension<StatusColors>()!;
 
