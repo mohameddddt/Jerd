@@ -12,12 +12,18 @@ abstract final class AppColors {
   static const textStrong = Color(0xFF5C4F45);
   static const textSecondary = Color(0xFF7B6D62);
   static const hint = Color(0xFF9A8B7F);
+  static const hintMuted = Color(0xFFA99A8E);
   static const onDark = Color(0xFFFFF8F2);
 
   // Borders
   static const borderSubtle = Color(0xFFEFE5D8);
   static const border = Color(0xFFE8DCCD);
   static const borderStrong = Color(0xFFD9CBBB);
+  static const borderDanger = Color(0xFFEBC9C3);
+  static const dragHandle = Color(0xFFDDD0C2);
+
+  // Highlight for the "just scanned" card
+  static const primarySoft = Color(0xFFF6E3D8);
 
   // Brand
   static const primary = Color(0xFFB85C38);
