@@ -1,6 +1,7 @@
 """Gemini, called only from the server so the API key never ships in the APK."""
 
 import json
+import time
 
 import requests
 
@@ -12,22 +13,36 @@ class GeminiError(Exception):
     pass
 
 
+# Tried in order after the configured model when Google reports it overloaded.
+FALLBACK_MODELS = ["gemini-3.5-flash", "gemini-flash-latest"]
+RETRYABLE = {429, 500, 503}
+
+
 def _call(api_key: str, model: str, parts: list, json_output: bool) -> str:
     body = {"contents": [{"parts": parts}]}
     if json_output:
         body["generationConfig"] = {"responseMimeType": "application/json"}
-    response = requests.post(
-        ENDPOINT.format(model=model),
-        headers={"x-goog-api-key": api_key, "Content-Type": "application/json"},
-        json=body,
-        timeout=40,
-    )
-    if response.status_code != 200:
-        raise GeminiError(f"Gemini returned {response.status_code}")
-    try:
-        return response.json()["candidates"][0]["content"]["parts"][0]["text"]
-    except (KeyError, IndexError, ValueError) as exc:
-        raise GeminiError("Unexpected Gemini response") from exc
+    last_status = None
+    for candidate in [model, *[m for m in FALLBACK_MODELS if m != model]]:
+        for attempt in range(2):
+            response = requests.post(
+                ENDPOINT.format(model=candidate),
+                headers={"x-goog-api-key": api_key, "Content-Type": "application/json"},
+                json=body,
+                timeout=40,
+            )
+            last_status = response.status_code
+            if response.status_code == 200:
+                try:
+                    return response.json()["candidates"][0]["content"]["parts"][0]["text"]
+                except (KeyError, IndexError, ValueError) as exc:
+                    raise GeminiError("Unexpected Gemini response") from exc
+            if response.status_code not in RETRYABLE:
+                break
+            time.sleep(1.5 * (attempt + 1))
+        if last_status not in RETRYABLE and last_status != 404:
+            break
+    raise GeminiError(f"Gemini returned {last_status}")
 
 
 def suggest_product(api_key: str, model: str, image_base64: str, mime_type: str, barcode: str | None) -> dict:
