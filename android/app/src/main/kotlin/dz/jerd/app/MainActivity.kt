@@ -1,5 +1,6 @@
-package com.example.jerd
+package dz.jerd.app
 
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 
-class MainActivity : FlutterActivity()
+// FragmentActivity lets plugins such as image_picker and permission_handler attach.
+class MainActivity : FlutterFragmentActivity()
