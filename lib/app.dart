@@ -101,8 +101,33 @@ class JerdApp extends StatelessWidget {
 }
 
 /// Shows login or the app, and starts per-session work when a user signs in.
-class AuthGate extends StatelessWidget {
+class AuthGate extends StatefulWidget {
   const AuthGate({super.key});
+
+  @override
+  State<AuthGate> createState() => _AuthGateState();
+}
+
+class _AuthGateState extends State<AuthGate> {
+  @override
+  void initState() {
+    super.initState();
+    // A restored session is already Authenticated before this widget
+    // subscribes, so the listener below never sees the transition.
+    if (context.read<AuthCubit>().state is Authenticated) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _startSession(context);
+      });
+    }
+  }
+
+  void _startSession(BuildContext context) {
+    context.read<ProductsCubit>().load();
+    final sync = context.read<SyncCubit>();
+    sync.refresh();
+    if (AppConfig.hasBackend) sync.syncNow();
+    BackgroundSync.register();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -111,11 +136,7 @@ class AuthGate extends StatelessWidget {
           (current is Authenticated) != (previous is Authenticated),
       listener: (context, state) {
         if (state is Authenticated) {
-          context.read<ProductsCubit>().load();
-          final sync = context.read<SyncCubit>();
-          sync.refresh();
-          if (AppConfig.hasBackend) sync.syncNow();
-          BackgroundSync.register();
+          _startSession(context);
         } else {
           BackgroundSync.cancel();
           navigatorKey.currentState?.popUntil((route) => route.isFirst);
