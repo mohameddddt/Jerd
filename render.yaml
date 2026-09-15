@@ -1,8 +1,11 @@
 # Render blueprint: connect the GitHub repo, and Render deploys on every push.
+# Free plan only. Render cron jobs are paid, so the nightly digest is triggered
+# by GitHub Actions instead (.github/workflows/nightly-digest.yml).
 services:
   - type: web
     name: jerd-api
     runtime: python
+    plan: free
     rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn wsgi:app --workers 2 --bind 0.0.0.0:$PORT
@@ -11,6 +14,8 @@ services:
       - key: PYTHON_VERSION
         value: 3.12.7
       - key: SECRET_KEY
+        generateValue: true
+      - key: CRON_SECRET
         generateValue: true
       - key: DATABASE_URL
         sync: false
@@ -27,17 +32,4 @@ services:
       - key: MIN_BUILD
         value: "1"
       - key: APK_URL
-        sync: false
-
-  - type: cron
-    name: jerd-nightly-digest
-    runtime: python
-    rootDir: backend
-    schedule: "0 19 * * *" # 20:00 in Algeria (UTC+1)
-    buildCommand: pip install -r requirements.txt
-    startCommand: python -m scripts.nightly_digest
-    envVars:
-      - key: DATABASE_URL
-        sync: false
-      - key: FIREBASE_CREDENTIALS
         sync: false
