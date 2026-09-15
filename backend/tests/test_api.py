@@ -14,6 +14,7 @@ class TestConfig(Config):
     TESTING = True
     DATABASE_URL = "sqlite:///:memory:"
     SECRET_KEY = "test"
+    CRON_SECRET = "cron-test"
 
 
 def uid() -> str:
@@ -217,3 +218,12 @@ def test_nightly_digest(app, client):
     client.post("/products/upsert", json={"products": [product()]}, headers=headers)
     assert run(app) == 1
     assert app.push.sent[-1]["title"] == "1 item to restock"
+
+
+def test_digest_job_endpoint_requires_the_cron_secret(app, client):
+    client.post("/products/upsert", json={"products": [product()]}, headers=login(client))
+    assert client.post("/jobs/nightly-digest").status_code == 403
+    assert client.post("/jobs/nightly-digest", headers={"X-Cron-Secret": "wrong"}).status_code == 403
+    response = client.post("/jobs/nightly-digest", headers={"X-Cron-Secret": "cron-test"})
+    assert response.json == {"shops_notified": 1}
+    assert app.push.sent[-1]["data"] == {"type": "digest"}
