@@ -13,7 +13,7 @@ class Config:
     # Firebase service-account JSON: a file path or the JSON itself.
     FIREBASE_CREDENTIALS = os.environ.get("FIREBASE_CREDENTIALS", "")
     GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
-    GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+    GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.6-flash")
     SENTRY_DSN = os.environ.get("SENTRY_DSN", "")
     # Shared secret for scheduler-triggered jobs such as the nightly digest.
     CRON_SECRET = os.environ.get("CRON_SECRET", "")
