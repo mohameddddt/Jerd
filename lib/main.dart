@@ -1,22 +1,25 @@
-import 'package:flutter/material.dart';
-import 'presentation/themes/app_themes.dart';
+import 'package:flutter/widgets.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
+import 'app.dart';
+import 'data/services/messaging_service.dart';
+import 'di/service_locator.dart';
+import 'infrastructure/app_config.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initMyApp();
+  await getIt<MessagingService>().init();
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: AppTheme.lightTheme,
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+  if (!AppConfig.hasSentry) {
+    runApp(const JerdApp());
+    return;
   }
+  await SentryFlutter.init(
+    (options) {
+      options.dsn = AppConfig.sentryDsn;
+      options.tracesSampleRate = 0.2;
+      options.sendDefaultPii = false;
+    },
+    appRunner: () => runApp(SentryWidget(child: const JerdApp())),
+  );
 }
